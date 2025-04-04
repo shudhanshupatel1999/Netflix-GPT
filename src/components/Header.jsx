@@ -1,13 +1,15 @@
 import { signOut } from "firebase/auth";
 import { auth } from "../utils/firebase";
 import { useNavigate } from "react-router-dom";
-import { useSelector } from "react-redux";
+import { useSelector, useDispatch } from "react-redux";
+import { toggleGptSearchView } from "../utils/gptSlice";
 
 
 
 const Header = () => {
   const navigate = useNavigate();
   const user = useSelector((store) => store.user);
+  const dispach = useDispatch();
 
   const handleSignOut = () =>{
     signOut(auth).then(() => {
@@ -19,6 +21,11 @@ const Header = () => {
     });    
   }
 
+  const handleGptSearchClick = () => {
+    // Toggle GPT Search
+    dispach(toggleGptSearchView());
+  }
+
 
   return (
     <div className="fixed top-0 left-0 w-full px-8 py-2 bg-gradient-to-b from-black  z-50 flex justify-between" >
@@ -28,6 +35,11 @@ const Header = () => {
 
       { user && (
         <div className="flex p-4">
+          <button className="flex p-2 bg-purple-800 text-white rounded mx-4 cursor-pointer"
+            onClick={handleGptSearchClick}
+          >
+            GPT Search
+          </button>
           <img 
             className="w-12 h-12 "
             src="https://images.pexels.com/photos/31379292/pexels-photo-31379292/free-photo-of-serene-foggy-landscape-with-wildflowers.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2" 

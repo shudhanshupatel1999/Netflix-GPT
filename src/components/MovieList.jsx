@@ -2,7 +2,7 @@ import React from 'react'
 import MovieCard from './MovieCard'
 
 const MovieList = ({ title, movies }) => {
-    console.log("Here is : ",movies);
+    
 
     
     // Prevent errors by checking if movies exist and is not empty

@@ -27,6 +27,7 @@
 - Created hooks for different types of movies "seperate for each type of movies"
 - Fetched data from API from each type of moives from TMDB moives List
 - Get image API link from TMDB
+- GPT Search
 
 
 

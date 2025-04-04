@@ -1,5 +1,8 @@
 {
   "projects": {
-    "default": "netflix-gpt-44453"
-  }
+    "default": "project-hosting-33797",
+    "project": "project-hosting-33797"
+  },
+  "targets": {},
+  "etags": {}
 }
